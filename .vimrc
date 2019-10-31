@@ -205,7 +205,7 @@ set smartcase       " ...unless we type a capital
 " search file names some rules in .zshrc and .rgignore
 :nmap <C-p> :Files<Cr>
 " search in files
-:nmap <C-f> :Rg<Cr>
+:nmap <C-f> :Ag<Cr>
 
 " Pulls up opened Buffers
 :nmap <leader>b :Buffers<Cr>
