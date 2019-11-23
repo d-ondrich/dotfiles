@@ -31,6 +31,11 @@ let g:coc_global_extensions = [
   \ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
+  \ 'coc-html',
+  \ 'coc-css',
+  \ 'coc-python',
+  \ 'coc-angular',
+  \ 'coc-flutter',
   \ ]
 " tab completion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
