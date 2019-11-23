@@ -6,7 +6,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin()
-
 " Markdown
  Plug 'reedes/vim-pencil'
  Plug 'nelstrom/vim-markdown-folding'
@@ -118,8 +117,8 @@ set autoindent
 set smartindent
 set smarttab
 set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set softtabstop=4
+set tabstop=4
 set expandtab
 
 " Auto indent pasted text
