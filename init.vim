@@ -14,6 +14,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator' " investigate this
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanoasis/vim-devicons' " Icons for NERDTree
+Plug 'tpope/vim-fugitive' " Git Wrapper
+Plug 'wesQ3/vim-windowswap' " Window swapper
 
 call plug#end()
 
@@ -28,9 +30,9 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
   \ 'coc-tsserver',
-  \ 'coc-eslint', 
-  \ 'coc-prettier', 
-  \ 'coc-json', 
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-json',
   \ 'coc-html',
   \ 'coc-css',
   \ 'coc-python',
@@ -55,17 +57,20 @@ let mapleader = ","
     " Pulls up opened Buffers
     :nmap <leader>b :Buffers<Cr>
 
-
+" ---------- Terminal Controls ----
+:nmap <leader>vt :vsplit term://zsh<Cr>
+:nmap <leader>ht :split term://zsh<Cr>
 
 " ---------- Basics ---------
-set clipboard=unnamed
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set expandtab
+set clipboard=unnamed
+set autoindent
 set number
 set relativenumber
 set incsearch " jump to search match as typing
@@ -73,7 +78,11 @@ set nohlsearch " don't highlight my searches
 set ignorecase
 set smartcase
 set noswapfile
+autocmd BufWritePre * %s/\s\+$//e "Auto-remove trailing whitespace on save
 
+" ================ Git ==============================
+" Git Blame
+nnoremap <Leader>g :Gblame<Cr>
 
 " ---------- Theme ---------
 " Display tabs and trailing spaces visually
