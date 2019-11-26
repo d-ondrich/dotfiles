@@ -60,6 +60,7 @@ let mapleader = ","
 " ---------- Terminal Controls ----
 :nmap <leader>vt :vsplit term://zsh<Cr>
 :nmap <leader>ht :split term://zsh<Cr>
+:tnoremap jj <C-\><C-n> " Exit Insert Mode
 
 " ---------- Basics ---------
 set autoindent
