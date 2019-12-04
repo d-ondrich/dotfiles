@@ -13,18 +13,21 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator' " investigate this
 Plug 'sheerun/vim-polyglot'
-Plug 'ryanoasis/vim-devicons' " Icons for NERDTree
 Plug 'tpope/vim-fugitive' " Git Wrapper
 Plug 'wesQ3/vim-windowswap' " Window swapper
+Plug 'ryanoasis/vim-devicons' " Icons for NERDTree
+Plug 'ludovicchabant/vim-gutentags' " Tags
 
 call plug#end()
 
-" NERDTree Mapping
-:map <C-n> :NERDTreeFind<Cr>
-let NERDTreeShowHidden=1 " show hidden files in NERDTree
-set conceallevel=3 " to hide brackets on dev icons
 
 " --------- IntelliSense --
+" Remap keys for gotos
+"nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gy <Plug>(coc-type-definition)
+"nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gr <Plug>(coc-references)
+
 " coc config
 let g:coc_global_extensions = [
   \ 'coc-snippets',
@@ -50,12 +53,15 @@ let mapleader = ","
 :imap jj <Esc>
 :nmap <Space><Space> :
 " Search directory
-    " search file names some rules in .zshrc and .rgignore
-    :nmap ++ :Files<Cr>
-    " search in files
-    :nmap -- :Ag<Cr>
-    " Pulls up opened Buffers
-    :nmap <leader>b :Buffers<Cr>
+" search file names some rules in .zshrc and .rgignore
+:nmap ++ :Files<Cr>
+" search in files
+:nmap -- :Ag<Cr>
+" Pulls up opened Buffers
+:nmap <leader>b :Buffers<Cr>
+
+:nmap <leader>sa :botright split<Cr>
+:nmap <leader>vsa :botright vspli<Cr>
 
 " ---------- Terminal Controls ----
 :nmap <leader>vt :vsplit term://zsh<Cr>
@@ -63,6 +69,7 @@ let mapleader = ","
 :tnoremap jj <C-\><C-n> " Exit Insert Mode
 
 " ---------- Basics ---------
+set encoding=utf8
 set autoindent
 set smartindent
 set smarttab
@@ -85,11 +92,16 @@ autocmd BufWritePre * %s/\s\+$//e "Auto-remove trailing whitespace on save
 " Git Blame
 nnoremap <Leader>g :Gblame<Cr>
 
+" --------- NERDTree ---------
+:map <C-n> :NERDTreeFind<Cr>
+let NERDTreeShowHidden=1 " show hidden files in NERDTree
+set conceallevel=3 " to hide brackets on dev icons
+let g:webdevicons_enable_airline_tabline = 1 " adding to vim-airline's tabline
+let g:webdevicons_conceal_nerdtree_brackets = 1 " whether or not to show the nerdtree brackets around flags
+
 " ---------- Theme ---------
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 colorscheme gruvbox
 syntax enable
-
-
 
