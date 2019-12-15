@@ -17,13 +17,16 @@ Plug 'tpope/vim-fugitive' " Git Wrapper
 Plug 'wesQ3/vim-windowswap' " Window swapper
 Plug 'ryanoasis/vim-devicons' " Icons for NERDTree
 Plug 'ludovicchabant/vim-gutentags' " Tags
+Plug 'terryma/vim-smooth-scroll'
 
 call plug#end()
 
 
 " --------- IntelliSense --
 " Remap keys for gotos
-"nmap <silent> gd <Plug>(coc-definition)
+"
+let g:gutentags_cache_dir = '~/.devtags'
+""nmap <silent> gd <Plug>(coc-definition)
 "nmap <silent> gy <Plug>(coc-type-definition)
 "nmap <silent> gi <Plug>(coc-implementation)
 "nmap <silent> gr <Plug>(coc-references)
@@ -67,6 +70,13 @@ let mapleader = ","
 :nmap <leader>vt :vsplit term://zsh<Cr>
 :nmap <leader>ht :split term://zsh<Cr>
 :tnoremap jj <C-\><C-n> " Exit Insert Mode
+
+" --------- Smooth Scroll ----
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+
 
 " ---------- Basics ---------
 set encoding=utf8
