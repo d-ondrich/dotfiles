@@ -103,6 +103,7 @@ autocmd BufWritePre * %s/\s\+$//e "Auto-remove trailing whitespace on save
 nnoremap <Leader>g :Gblame<Cr>
 
 " --------- NERDTree ---------
+autocmd vimenter * if !argc() | NERDTree | endif "open NERDTree by default
 :map <C-n> :NERDTreeFind<Cr>
 let NERDTreeShowHidden=1 " show hidden files in NERDTree
 set conceallevel=3 " to hide brackets on dev icons
