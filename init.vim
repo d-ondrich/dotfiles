@@ -104,6 +104,7 @@ nnoremap <Leader>g :Gblame<Cr>
 
 " --------- NERDTree ---------
 autocmd vimenter * if !argc() | NERDTree | endif "open NERDTree by default
+autocmd VimEnter * wincmd p "change focus away from NERDTree pane
 :map <C-n> :NERDTreeFind<Cr>
 let NERDTreeShowHidden=1 " show hidden files in NERDTree
 set conceallevel=3 " to hide brackets on dev icons
