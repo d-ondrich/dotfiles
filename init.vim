@@ -101,6 +101,10 @@ autocmd BufWritePre * %s/\s\+$//e "Auto-remove trailing whitespace on save
 " ================ Git ==============================
 " Git Blame
 nnoremap <Leader>g :Gblame<Cr>
+" Fugitive Conflict Resolution
+nnoremap <leader>gd :Gvdiff<CR>
+nnoremap gdh :diffget //2<CR>
+nnoremap gdl :diffget //3<CR>
 
 " --------- NERDTree ---------
 autocmd vimenter * if !argc() | NERDTree | endif "open NERDTree by default

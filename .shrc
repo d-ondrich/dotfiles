@@ -22,3 +22,20 @@ function current_branch() {
 }
 alias gpush='git push --set-upstream origin $(git_current_branch)'
 
+function glz(){
+   default_comment=fix
+   comment=${1:-${default_comment}}
+   git add -A :/
+   git commit -m ${comment}
+   git push
+ }
+
+function port(){
+	lsof -n -i4TCP:"${1}"
+}
+function port-kill(){
+	sudo kill $(lsof -t -i:${1})
+}
+
+alias ezp='vim ~/.zshrc'
+alias szp='source ~/.zshrc'
