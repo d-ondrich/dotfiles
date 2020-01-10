@@ -86,6 +86,7 @@ set nohlsearch " don't highlight my searches
 set ignorecase
 set smartcase
 set noswapfile
+set autoread " refreshes changes if buffer opened was changed other places
 autocmd BufWritePre * %s/\s\+$//e "Auto-remove trailing whitespace on save
 
 " ================ Git ==============================
