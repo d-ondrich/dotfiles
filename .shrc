@@ -39,3 +39,6 @@ function port-kill(){
 
 alias ezp='vim ~/.zshrc'
 alias szp='source ~/.zshrc'
+
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
+

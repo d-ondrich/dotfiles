@@ -77,9 +77,9 @@ set nocompatible
 
 " TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
 " source ~/.vimrc.before if it exists.
-if filereadable(expand("~/.vimrc.before"))
-  source ~/.vimrc.before
-endif
+"if filereadable(expand("~/.vimrc.before"))
+ " source ~/.vimrc.before
+"endif
 
 " ================ General Config ====================
 
@@ -155,37 +155,15 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
-" ================ Fake Tabs ========================
-" Enable the list of buffers
-"let g:airline#extensions#tabline#enabled = 1
-" Show just the filename
-"let g:airline#extensions#tabline#fnamemod = ':t'
-" This allows buffers to be hidden if you've modified a buffer.
-" This is almost a must if you wish to use buffers in this way.
-"set hidden
-
-" To open a new empty buffer
-" This replaces :tabnew which I used to bind to this mapping
-"nmap <leader>T :enew<cr>
-
-" Move to the next buffer
-"nmap <leader>l :bnext<CR>
-
-" Move to the previous buffer
-"nmap <leader>h :bprevious<CR>
-
-" Close the current buffer and move to the previous one
-" This replicates the idea of closing a tab
-"nmap <leader>bq :bp <BAR> bd #<CR>
-
-" Show all open buffers and their status
-"nmap <leader>bl :ls<CR>
-
 " ================ Scrolling ========================
-
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
+  " --------- Smooth Scroll ----
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " ================ Git ==============================
 " Git Blame
@@ -256,11 +234,18 @@ let g:NERDToggleCheckAllLines = 1
 
  set t_Co=256
  syntax on
- set background=dark
- set termguicolors
- let g:gruvbox_contrast_dark = 'hard'
- let g:gruvbox_number_column = 'bg1'
- colorscheme gruvbox "Need to be last
+" set background=dark
+" set termguicolors
+" let g:gruvbox_contrast_dark = 'hard'
+" let g:gruvbox_number_column = 'bg1'
+" colorscheme gruvbox "Need to be last
+
+ " ---------- Theme ---------
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
+colorscheme gruvbox
+syntax enable
+
 
 autocmd BufWritePre * %s/\s\+$//e "Auto-remove trailing whitespace on save
 
