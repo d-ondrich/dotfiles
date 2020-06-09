@@ -46,6 +46,7 @@ let g:coc_global_extensions = [
   \ 'coc-angular',
   \ 'coc-flutter',
   \ 'coc-tabnine'
+  \ 'coc-rls',
   \ ]
 " tab completion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -88,9 +89,9 @@ set encoding=utf8
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set expandtab
 set clipboard=unnamed
 set autoindent
