@@ -15,7 +15,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive' " Git Wrapper
 Plug 'wesQ3/vim-windowswap' " Window swapper
 Plug 'ryanoasis/vim-devicons' " Icons for NERDTree
-Plug 'ludovicchabant/vim-gutentags' " Tags
+"Plug 'ludovicchabant/vim-gutentags' " Tags
 Plug 'terryma/vim-smooth-scroll'
 Plug 'puremourning/vimspector' " Debugger
 
@@ -27,10 +27,10 @@ call plug#end()
 "noremap <C-]> g<C-]>
 
 let g:gutentags_cache_dir = '~/.devtags'
-""nmap <silent> gd <Plug>(coc-definition)
-"nmap <silent> gy <Plug>(coc-type-definition)
-"nmap <silent> gi <Plug>(coc-implementation)
-"nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " coc config
 let g:coc_global_extensions = [
@@ -45,6 +45,7 @@ let g:coc_global_extensions = [
   \ 'coc-python',
   \ 'coc-angular',
   \ 'coc-flutter',
+  \ 'coc-tabnine'
   \ ]
 " tab completion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -61,9 +62,9 @@ let mapleader = ","
 :nmap <Space><Space> :
 " Search directory
 " search file names some rules in .zshrc and .rgignore
-:nmap ++ :Files<Cr>
+:nmap <S-p> :Files<Cr>
 " search in files
-:nmap -- :Ag<Cr>
+:nmap <S-f> :Ag<Cr>
 " Pulls up opened Buffers
 :nmap <leader>b :Buffers<Cr>
 
