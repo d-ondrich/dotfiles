@@ -9,7 +9,7 @@ For LSP:
 For NeoVim setup:
     For dev icons needed to:
     ```
-    brew tap homebrew/cask-fonts
-    brew cask install font-hack-nerd-font
+    brew tap homebrew/cask-fonts\n
+    brew cask install font-hack-nerd-font\n
     And set Hack Nerd Font in iterm2 pref
     ```
