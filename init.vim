@@ -74,10 +74,10 @@ let mapleader = "," " map leader key as ,
 :nmap <S-f> :Ag<Cr>
 " ,b -> Pulls up opened Buffers
 :nmap <leader>b :Buffers<Cr>
-" ,sa -> splits current buffer horizontally
-:nmap <leader>sa :botright split<Cr>
-" ,vsa -> splits current buffer vertically
-:nmap <leader>vsa :botright vspli<Cr>
+" ,s -> splits current buffer horizontally
+:nmap <leader>s :split<Cr>
+" ,vs -> splits current buffer vertically
+:nmap <leader>vs :vsplit<Cr>
 
 " ---------- Terminal Controls ----
 " ,vt -> opens terminal in nvim split vertically
