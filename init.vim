@@ -102,11 +102,8 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 set encoding=utf8
 set autoindent
 set smartindent
-set smarttab
 set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-set expandtab
+set smarttab
 set clipboard=unnamed
 set autoindent
 set number
