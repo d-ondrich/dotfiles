@@ -105,7 +105,6 @@ set smartindent
 set shiftwidth=4
 set smarttab
 set clipboard=unnamed
-set autoindent
 set number
 set relativenumber
 set incsearch " jump to search match as typing
