@@ -15,18 +15,11 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive' " Git Wrapper
 Plug 'wesQ3/vim-windowswap' " Window swapper
 Plug 'ryanoasis/vim-devicons' " Icons for NERDTree
-"Plug 'ludovicchabant/vim-gutentags' " Tags
 Plug 'terryma/vim-smooth-scroll'
-Plug 'puremourning/vimspector' " Debugger
-
 call plug#end()
 
 
 " --------- IntelliSense --
-" gives you a list for multiple defs and jumps immediately for single def
-"noremap <C-]> g<C-]>
-
-let g:gutentags_cache_dir = '~/.devtags'
 " go to definition
 nmap <silent> gd <Plug>(coc-definition)
 " go to type definition
@@ -56,10 +49,6 @@ let g:coc_global_extensions = [
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" ---------- Debugger -------
-let g:vimspector_enable_mappings = 'HUMAN'
-"packadd! vimspector
 
 " ---------- Custom Hotkeys -
 let mapleader = "," " map leader key as ,
